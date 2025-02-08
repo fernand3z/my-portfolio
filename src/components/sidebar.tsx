@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Sheet, SheetContent, SheetTrigger, SheetFooter } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 import { GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon, EnvelopeClosedIcon } from "@radix-ui/react-icons"
@@ -16,7 +16,11 @@ export function Sidebar({ sections, activeSection, onSectionClick }: SidebarProp
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden">
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="md:hidden flex items-center justify-center text-foreground hover:bg-background/50"
+        >
           <Menu className="h-5 w-5" />
           <span className="sr-only">Toggle menu</span>
         </Button>
@@ -56,7 +60,7 @@ export function Sidebar({ sections, activeSection, onSectionClick }: SidebarProp
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center space-x-2 px-4">
+          <div className="flex items-center justify-center space-x-2 px-4">
             <Button
               variant="ghost"
               size="icon"
